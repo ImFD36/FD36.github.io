@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD36 | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --text-muted: #757575;
+            --primary-orange: #ff6b00;
+            --primary-glow: 0 0 12px rgba(255, 107, 0, 0.8), 0 0 24px rgba(255, 107, 0, 0.4);
+            --sidebar-bg: rgba(255, 255, 255, 0.65);
+            --sidebar-border: rgba(255, 255, 255, 0.4);
+            
+            /* Social Brand Colors */
+            --color-gmail: #ea4335;
+            --color-minecraft: #578a34;
+            --color-discord: #5865f2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- GLOW EFFECT --- */
+        .glow-text {
+            color: var(--primary-orange);
+            text-shadow: var(--primary-glow);
+        }
+
+        /* --- SIDEBAR (GLASSMORPHISM) --- */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            bottom: 20px;
+            width: 260px;
+            background: var(--sidebar-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--sidebar-border);
+            border-radius: 24px;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 100;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-brand .brand-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .nav-brand .brand-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 6px 0;
+        }
+
+        nav a:hover, nav li.active a {
+            color: var(--primary-orange);
+            transform: translateX(4px);
+        }
+
+        .nav-footer {
+            font-size: 0.75rem;
+            color: var(--text-
