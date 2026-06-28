@@ -98,4 +98,279 @@
 
         .nav-footer {
             font-size: 0.75rem;
-            color: var(--text-
+            color: var(--text-muted);
+        }
+
+        /* --- MAIN CONTENT LAYER --- */
+        main {
+            margin-left: 320px;
+            width: calc(100% - 320px);
+            padding: 40px 80px 40px 40px;
+        }
+
+        section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 0;
+        }
+
+        /* --- DIVIDER LINE --- */
+        .mid-line {
+            width: 150px;
+            height: 4px;
+            background-color: #1a1a1a;
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        #hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* --- EXPERIENCE SECTION --- */
+        .exp-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 12px 28px;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn-link:hover {
+            transform: translateY(-2px);
+            background-color: var(--primary-orange);
+            box-shadow: var(--primary-glow);
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Specific Brand Colors */
+        .label-gmail { color: var(--color-gmail); }
+        .label-minecraft { color: var(--color-minecraft); }
+        .label-discord { color: var(--color-discord); }
+
+        /* --- INTERSECTION OBSERVER ANIMATION --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- RESPONSIVE DESIGN (MOBILE BOTTOM NAV) --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            header {
+                position: fixed;
+                top: auto;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                width: calc(100% - 30px);
+                height: 65px;
+                padding: 0 20px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+            }
+
+            .nav-brand, .nav-footer {
+                display: none;
+            }
+
+            nav ul {
+                flex-direction: row;
+                gap: 30px;
+            }
+
+            nav a {
+                padding: 0;
+                font-size: 0.9rem;
+            }
+
+            nav a:hover, nav li.active a {
+                transform: translateY(-2px);
+            }
+
+            main {
+                margin-left: 0;
+                width: 100%;
+                padding: 30px 24px 100px 24px;
+            }
+
+            section {
+                min-height: 70vh;
+            }
+
+            #hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .exp-title {
+                font-size: 2rem;
+            }
+
+            .contact-title {
+                font-size: 2.3rem;
+            }
+
+            .contact-list {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-brand">
+            <div class="brand-title glow-text">FD36</div>
+            <div class="brand-subtitle">Staffer Portfolio</div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li class="nav-item active" data-section="hero"><a href="#hero">Home</a></li>
+                <li class="nav-item" data-section="experience"><a href="#experience">Experience</a></li>
+                <li class="nav-item" data-section="contacts"><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-footer">
+            &copy; 2026 FD36. Luxury Minimal.
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="hero" class="reveal">
+            <h1 class="glow-text">FD36</h1>
+            <p>A minecraft staffer in many servers</p>
+            <div class="mid-line"></div>
+        </section>
+
+        <section id="experience" class="reveal">
+            <h2 class="exp-title glow-text">Sr.admin at BedcraftMC</h2>
+            <a href="https://discord.bedcraftmc.eu" target="_blank" rel="noopener" class="btn-link">
+                Join Discord Server →
+            </a>
+            <div class="mid-line"></div>
+        </section>
+
+        <section id="contacts" class="reveal">
+            <h2 class="contact-title glow-text">Contacts</h2>
+            <ul class="contact-list">
+                <li class="contact-item">
+                    <span class="label-gmail">Email:</span> 
+                    <span class="glow-text">fd36.wtf@gmail.com</span>
+                </li>
+                <li class="contact-item">
+                    <span class="label-minecraft">Minecraft username:</span> 
+                    <span class="glow-text">FD36</span>
+                </li>
+                <li class="contact-item">
+                    <span class="label-discord">Discord:</span> 
+                    <span class="glow-text">fd36___</span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script>
+        /* --- INTERSECTION OBSERVER (SCROLL REVEAL) --- */
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            root: null,
+            threshold: 0.15
+        });
+
+        revealElements.forEach(element => revealObserver.observe(element));
+
+        /* --- ACTIVE SECTION SCROLL-SPY --- */
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-section') === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
